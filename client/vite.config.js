@@ -6,7 +6,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/api':{
-        target:import.meta.env.VITE_REACT_APP_BACKEND_URL,
+        target:"https://blog-psi-ivory.vercel.app/",
         secure:false
       },
     },
