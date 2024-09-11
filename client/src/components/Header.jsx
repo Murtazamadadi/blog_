@@ -28,7 +28,7 @@ export default function Header() {
     const handleSignOut=async()=>{
 
       try{
-        const res=await fetch("/api/user/sign-out",{
+        const res=await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/sign-out`,{
           method:"POST"
         })
   

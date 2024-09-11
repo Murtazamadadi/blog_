@@ -7,6 +7,7 @@ import authRouter from "./routes/auth.route.js"
 import postRouter from "./routes/post.route.js"
 import commentRouter from "./routes/comment.route.js"
 import cookieParser from "cookie-parser"
+import cors from "cors"
 // import path from "path"
 
 
@@ -19,6 +20,8 @@ mongoose.connect(process.env.MONGO).then(()=>{
 })
 const PORT=process.env.PORT || 8080;
 const app=express()
+
+app.use(cors())
 // const __dirname=path.resolve()
 
 app.use(express.json())

@@ -18,7 +18,7 @@ function OAuth() {
         try{
             const resultFormGoogle=await signInWithPopup(auth,provider)
             // console.log(resultFormGoogle)
-            const res=await fetch("/api/auth/google",{
+            const res=await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/auth/google`,{
                 method:"POST",
                 headers:{"content-type":"application/json"},
                 body: JSON.stringify({

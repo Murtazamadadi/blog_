@@ -17,7 +17,7 @@ function DashPosts() {
   // ======================================================= fetch post base on userId
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch(`/api/posts/get-posts?userId=${currentUser._id}`);
+      const res = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/posts/get-posts?userId=${currentUser._id}`);
 
       const data = await res.json();
 
@@ -41,7 +41,7 @@ function DashPosts() {
 
     try {
       const res = await fetch(
-        `/api/posts/get-posts?userId=${currentUser._id}&startIndex=${startIndex}`
+        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/posts/get-posts?userId=${currentUser._id}&startIndex=${startIndex}`
       );
       const data = await res.json();
 
@@ -62,7 +62,7 @@ function DashPosts() {
 
     try{
       // eslint-disable-next-line no-undef
-      const res= await fetch(`/api/posts/delete/${psotIdTodelete}/${currentUser._id}`,{
+      const res= await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/posts/delete/${psotIdTodelete}/${currentUser._id}`,{
         method:"DELETE"
       })
       const data=await res.json()

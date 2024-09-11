@@ -21,7 +21,7 @@ function DashUsers() {
   // ======================================================= fetch post base on userId
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await fetch(`/api/user/get-users`);
+      const res = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/get-users`);
 
       const data = await res.json();
 
@@ -45,7 +45,7 @@ function DashUsers() {
 
     try {
       const res = await fetch(
-        `/api/user/get-users?startIndex=${startIndex}`
+        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/get-users?startIndex=${startIndex}`
       );
       const data = await res.json();
 
@@ -65,7 +65,7 @@ function DashUsers() {
     setShowModel(false)
 
     try{
-        const res=await fetch(`/api/user/delete/${currentUser._id}`,{
+        const res=await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/user/delete/${currentUser._id}`,{
             method:"DELETE"
         })
 

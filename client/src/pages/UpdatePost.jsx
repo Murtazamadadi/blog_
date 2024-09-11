@@ -74,7 +74,7 @@ const handleSubmit=async(e)=>{
     e.preventDefault()
 
     try{
-        const res=await fetch(`/api/posts/update/${formData._id}/${currentUser._id}`,{
+        const res=await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/posts/update/${formData._id}/${currentUser._id}`,{
             method:"PUT",
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify(formData)
@@ -103,7 +103,7 @@ useEffect(()=>{
     
     try{
             const fetchData=async()=>{
-            const res=await fetch(`/api/posts/get-posts?postId=${postId}`)
+            const res=await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/posts/get-posts?postId=${postId}`)
             const data=await res.json()
     
             if(!res.ok){

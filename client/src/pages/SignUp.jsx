@@ -29,7 +29,7 @@ export default function SignUp() {
     try{
       setLoading(true)
       setErrorMessage(false)
-      const res=await fetch("/api/auth/sign-up",{
+      const res=await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/auth/sign-up`,{
         method:"POST",
         headers:{"content-type":"application/json"},
         body: JSON.stringify(formData)
